@@ -1,28 +1,3 @@
-# EcoStore Microservice Backend
-
-Backend de EcoStore desarrollado para el taller practico de Arquitectura Hexagonal, Contenedores y Documentacion RFC del curso Software Architecture II. El proyecto implementa una solucion de comercio electronico basada en microservicios, comunicacion por NATS, persistencia con PostgreSQL, almacenamiento temporal con Redis y despliegue reproducible mediante Docker Compose.
-
-## Tabla de Contenido
-
-1. [Descripcion General](#descripcion-general)
-2. [Arquitectura del Sistema](#arquitectura-del-sistema)
-3. [Tecnologias Utilizadas](#tecnologias-utilizadas)
-4. [Estructura del Repositorio](#estructura-del-repositorio)
-5. [Microservicios](#microservicios)
-6. [Puertos del Proyecto](#puertos-del-proyecto)
-7. [Requisitos Previos](#requisitos-previos)
-8. [Ejecucion con Docker Compose](#ejecucion-con-docker-compose)
-9. [Verificacion del Entorno](#verificacion-del-entorno)
-10. [Endpoints Principales](#endpoints-principales)
-11. [Flujo de Prueba Recomendado](#flujo-de-prueba-recomendado)
-12. [Arquitectura Hexagonal](#arquitectura-hexagonal)
-13. [Mensajeria NATS](#mensajeria-nats)
-14. [Persistencia](#persistencia)
-15. [Comandos Utiles](#comandos-utiles)
-16. [Solucion de Problemas](#solucion-de-problemas)
-17. [Documentacion Relacionada](#documentacion-relacionada)
-18. [Integrantes](#integrantes)
-
 ## Descripcion General
 
 EcoStore es una plataforma backend de comercio electronico organizada como un ecosistema de microservicios. La aplicacion permite gestionar usuarios, autenticacion, catalogo de productos, carrito de compras y proceso de checkout.
@@ -149,14 +124,7 @@ Para ejecutar o compilar localmente sin Docker se requiere adicionalmente:
 
 ## Ejecucion con Docker Compose
 
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/dannymateo/eco-store-microservice-backend.git
-cd eco-store-microservice-backend
-```
-
-### 2. Construir y levantar todo el ecosistema
+### 1. Construir y levantar todo el ecosistema
 
 ```bash
 docker compose up -d --build
@@ -164,7 +132,7 @@ docker compose up -d --build
 
 Este comando construye las imagenes de los microservicios y levanta los contenedores definidos en `docker-compose.yml`.
 
-### 3. Verificar contenedores activos
+### 2. Verificar contenedores activos
 
 ```bash
 docker compose ps
@@ -185,13 +153,13 @@ eco-store-users-db
 eco-store-cart-redis
 ```
 
-### 4. Revisar logs generales
+### 3. Revisar logs generales
 
 ```bash
 docker compose logs -f
 ```
 
-### 5. Revisar logs de un servicio especifico
+### 4. Revisar logs de un servicio especifico
 
 ```bash
 docker compose logs -f api-gateway
@@ -201,13 +169,13 @@ docker compose logs -f checkout-service
 docker compose logs -f users-service
 ```
 
-### 6. Detener el entorno
+### 7. Detener el entorno
 
 ```bash
 docker compose down
 ```
 
-### 7. Detener el entorno y eliminar volumenes
+### 8. Detener el entorno y eliminar volumenes
 
 Use este comando solamente si desea borrar los datos persistidos en las bases de datos y Redis.
 
